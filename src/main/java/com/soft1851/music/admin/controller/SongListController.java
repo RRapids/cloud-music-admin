@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author ytf
@@ -37,7 +37,7 @@ public class SongListController {
     }
 
     @GetMapping("/type")
-    public List<Map<String, Object>> getByType(){
+    public List<Map<String, Object>> getByType() {
         return songListService.getByType();
     }
 

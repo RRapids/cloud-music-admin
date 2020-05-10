@@ -24,7 +24,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author ytf
@@ -39,9 +39,9 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
     @Override
     public List<Map<String, Object>> selectAll() {
         QueryWrapper<Song> wrapper = new QueryWrapper<>();
-        wrapper.select("song_name", "singer", "duration", "comment_count", "like_count", "create_time");
+        wrapper.select("song_name", "singer", "like_count", "duration", "comment_count", "create_time");
         List<Map<String, Object>> song = songMapper.selectMaps(wrapper);
-        if(song != null){
+        if (song != null) {
             return song;
         }
         throw new CustomException("歌曲查询异常", ResultCode.DATABASE_ERROR);
@@ -63,7 +63,7 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
     @SneakyThrows
     @Override
     public void exportData() {
-        String excelPath = "D:\\picture\\song.xlsx";
+        String excelPath = "D:\\temp\\song.xlsx";
         //导出excel对象
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         //数据缓冲
@@ -80,6 +80,12 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
         sxssfWorkbook.write(outputStream);
         outputStream.flush();
         outputStream.close();
+    }
+
+    @Override
+    public String deleteById(String musicId) {
+
+        return null;
     }
 
     /**

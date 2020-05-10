@@ -24,10 +24,6 @@ public class SysRoleController {
     @Resource
     private SysRoleService sysRoleService;
 
-    //    @GetMapping("/{roleId}")
-//    public Map getRoleById(@PathVariable int roleId) {
-//        return sysRoleService.selectRoleById(roleId);
-//    }
 
     @GetMapping()
     public Map getRoleById(@Param("roleId") String roleId) {

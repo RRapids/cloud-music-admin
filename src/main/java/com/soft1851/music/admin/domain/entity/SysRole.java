@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ytf
@@ -31,6 +31,7 @@ public class SysRole extends Model<SysRole> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableField(exist = false)
     @JsonIgnore
     private List<SysMenu> menus;
 

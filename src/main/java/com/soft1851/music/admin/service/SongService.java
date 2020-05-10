@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author zxl
@@ -17,12 +17,14 @@ import java.util.Map;
 public interface SongService extends IService<Song> {
     /**
      * 查询所有歌曲
+     *
      * @return
      */
     List<Map<String, Object>> selectAll();
 
     /**
      * 模糊查
+     *
      * @return
      */
     List<Song> getSongBy(String filed);
@@ -31,4 +33,11 @@ public interface SongService extends IService<Song> {
      * 导出数据
      */
     void exportData();
+
+    /**
+     * 删除
+     * @param musicId
+     * @return
+     */
+    String deleteById(String musicId);
 }
